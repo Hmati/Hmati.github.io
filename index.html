@@ -8,160 +8,120 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #87CEEB; /* Sky blue background */
+            background-color: #87CEEB;
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .container {
             max-width: 900px;
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .profile {
-            width: 30%;
-            padding-right: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
         .profile img {
-            width: 80%;
+            width: 150px;
             border-radius: 50%;
-            margin-bottom: 20px;
-        }
-        .details {
-            width: 65%;
-        }
-        .projects {
-            width: 100%;
-            margin-top: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         h1, h2 {
             color: #333;
         }
-        a {
-            text-decoration: none;
-            color: #007BFF;
-        }
-        .project {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 15px;
-        }
-        .project img {
-            width: 150px;
-            height: auto;
-            margin-right: 20px;
-        }
-        .about {
-            margin-top: 20px;
-        }
         .about p {
             color: #555;
+            line-height: 1.6;
         }
-        .sample-output {
-            width: 100%;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+            transition: 0.3s;
         }
-        /* Slide Show */
+        .links a:hover {
+            background-color: #0056b3;
+        }
         .slide-container {
             position: relative;
             max-width: 100%;
-            margin-top: 20px;
             overflow: hidden;
-            border-radius: 8px;
+            margin-top: 20px;
         }
         .slide-images {
             display: flex;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s ease-in-out;
         }
-        .slide-images img {
-            width: 100%;
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background: #f9f9f9;
             border-radius: 8px;
         }
         .prev, .next {
             position: absolute;
             top: 50%;
-            padding: 16px;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
             color: white;
-            background-color: rgba(0, 0, 0, 0.5);
             border: none;
+            padding: 10px;
             cursor: pointer;
-            font-size: 18px;
-            transform: translate(0, -50%);
         }
-        .prev {
-            left: 0;
-        }
-        .next {
-            right: 0;
-        }
+        .prev { left: 0; }
+        .next { right: 0; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile">
-            <img src="https://drive.google.com/uc?export=view&id=1Qu1Rt7SxS0pQ0wY38G8a7F-LG0yvvOJD" alt="Hellen Mati"> <!-- Catchy profile image -->
+            <img src="https://drive.google.com/uc?export=view&id=1Qu1Rt7SxS0pQ0wY38G8a7F-LG0yvvOJD" alt="Hellen Mati">
             <h1>Hellen Mati</h1>
-
             <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
-            <div class="about">
-                <h2>About Me</h2>
-                <p>I am an experienced Data Engineer with a passion for developing scalable data pipelines and leveraging real-time analytics to drive business insights. I specialize in cloud-based solutions using technologies like Python, SQL, and Azure. My work is driven by the mission to create data-driven solutions that empower businesses to make informed decisions. I enjoy mentoring others and sharing my knowledge in data engineering and analytics.</p>
-            </div>
-            <p><a href="https://www.linkedin.com/in/hellen-mati">View My LinkedIn Profile</a></p>
-            <p><a href="https://github.com/Hmati">View My GitHub Profile</a></p>
         </div>
-        <div class="details">
-            <h2>Portfolio</h2>
-            <!-- Slide Show -->
-            <div class="slide-container">
-                <div class="slide-images">
-                    <div class="project">
-                        <div>
-                            <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL"><h3>Data Analysis with SQL</h3></a>
-                            <p>Using SQL for querying and analyzing structured data.</p>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <div>
-                            <a href="https://github.com/Hmati/Customer-Churn-Prediction"><h3>Customer Churn Prediction</h3></a>
-                            <p>Predicting customer churn using Apache Spark and machine learning.</p>
-                        </div>
-                    </div>
+        <div class="about">
+            <h2>About Me</h2>
+            <p>I specialize in designing scalable data pipelines, real-time analytics, and cloud-based solutions using Python, SQL, and Azure. Passionate about data-driven decision-making and mentoring in data engineering and analytics.</p>
+        </div>
+        <div class="links">
+            <a href="https://www.linkedin.com/in/hellen-mati" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Hmati" target="_blank">GitHub</a>
+        </div>
+        <div class="slide-container">
+            <div class="slide-images">
+                <div class="slide">
+                    <h3>Data Analysis with SQL</h3>
+                    <p>Using SQL for querying and analyzing structured data.</p>
+                    <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
                 </div>
-                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                <div class="slide">
+                    <h3>Customer Churn Prediction</h3>
+                    <p>Predicting customer churn using Apache Spark and machine learning.</p>
+                    <a href="https://github.com/Hmati/Customer-Churn-Prediction">View Project</a>
+                </div>
             </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
     </div>
-
     <script>
-        let currentIndex = 0;
-
+        let index = 0;
         function moveSlide(direction) {
-            const slides = document.querySelectorAll(".slide-images .project");
+            const slides = document.querySelectorAll(".slide");
             const totalSlides = slides.length;
-            currentIndex += direction;
-
-            if (currentIndex >= totalSlides) {
-                currentIndex = 0;
-            } else if (currentIndex < 0) {
-                currentIndex = totalSlides - 1;
-            }
-
-            const slideContainer = document.querySelector(".slide-images");
-            const offset = -currentIndex * 100;
-            slideContainer.style.transform = `translateX(${offset}%)`;
+            index += direction;
+            if (index >= totalSlides) index = 0;
+            if (index < 0) index = totalSlides - 1;
+            document.querySelector(".slide-images").style.transform = `translateX(${-index * 100}%)`;
         }
     </script>
 </body>
