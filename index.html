@@ -16,7 +16,7 @@
         }
         .container {
             max-width: 900px;
-            background: #FFDFDD;
+            background: #ffc1cc;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -47,27 +47,37 @@
             text-decoration: none;
             color: #007BFF;
         }
-        /* Analytical Slideshow */
-        .analytics-container {
+        .project {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        .about {
+            margin-top: 20px;
+        }
+        .about p {
+            color: #555;
+        }
+        .slide-container {
             position: relative;
             max-width: 100%;
             margin-top: 20px;
             overflow: hidden;
             border-radius: 8px;
         }
-        .analytics-images {
+        .slide-images {
             display: flex;
             transition: transform 0.5s ease;
         }
-        .analytics-images img {
+        .slide-images img {
             width: 100%;
             border-radius: 8px;
         }
-        /* Slide Show Controls */
         .prev, .next {
             position: absolute;
             top: 50%;
-            padding: 10px;
+            padding: 16px;
             color: white;
             background-color: rgba(0, 0, 0, 0.5);
             border: none;
@@ -81,12 +91,28 @@
         .next {
             right: 0;
         }
+        /* Analytical Slideshow */
+        .analysis-slide-container {
+            position: relative;
+            max-width: 100%;
+            margin-top: 20px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .analysis-slide-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .analysis-slide-images img {
+            width: 100%;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile">
-            <img src="https://drive.usercontent.google.com/download?id=1Qu1Rt7SxS0pQ0wY38G8a7F-LG0yvvOJD&export=view&authuser=0" alt="Hellen Mati"> <!-- Catchy profile image -->
+            <img src="https://drive.google.com/thumbnail?id=1Qu1Rt7SxS0pQ0wY38G8a7F-LG0yvvOJD" alt="Hellen Mati"> 
             <h1>Hellen Mati</h1>
             <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
             <div class="about">
@@ -98,55 +124,51 @@
         </div>
         <div class="details">
             <h2>Portfolio</h2>
-            <!-- Analytical Slideshow -->
-            <div class="analytics-container">
-                <div class="analytics-images">
-                    <img src="https://www.example.com/analysis1.jpg" alt="Data Analysis Example 1">
-                    <img src="https://www.example.com/analysis2.jpg" alt="Data Analysis Example 2">
-                    <img src="https://www.example.com/analysis3.jpg" alt="Data Analysis Example 3">
+            <div class="slide-container">
+                <div class="slide-images">
+                    <div class="project">
+                        <div>
+                            <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL"><h3>Data Analysis with SQL</h3></a>
+                            <p>Using SQL for querying and analyzing structured data.</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div>
+                            <a href="https://github.com/Hmati/Customer-Churn-Prediction"><h3>Customer Churn Prediction</h3></a>
+                            <p>Predicting customer churn using Apache Spark and machine learning.</p>
+                        </div>
+                    </div>
                 </div>
-                <button class="prev" onclick="moveAnalyticsSlide(-1)">&#10094;</button>
-                <button class="next" onclick="moveAnalyticsSlide(1)">&#10095;</button>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
             </div>
-            <!-- Project List -->
-            <div class="projects">
-                <div class="project">
-                    <div>
-                        <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL"><h3>Data Analysis with SQL</h3></a>
-                        <p>Using SQL for querying and analyzing structured data.</p>
-                    </div>
-                </div>
-                <div class="project">
-                    <div>
-                        <a href="https://github.com/Hmati/Customer-Churn-Prediction"><h3>Customer Churn Prediction</h3></a>
-                        <p>Predicting customer churn using Apache Spark and machine learning.</p>
-                    </div>
+            <h2>Analytical Insights</h2>
+            <div class="analysis-slide-container">
+                <div class="analysis-slide-images">
+                    <img src="https://via.placeholder.com/900x400?text=Time+Series+Analysis" alt="Time Series Analysis">
+                    <img src="https://via.placeholder.com/900x400?text=Machine+Learning+Predictions" alt="Machine Learning Predictions">
+                    <img src="https://via.placeholder.com/900x400?text=Big+Data+Visualization" alt="Big Data Visualization">
                 </div>
             </div>
         </div>
     </div>
-
     <script>
-        let analyticsIndex = 0;
-
-        function moveAnalyticsSlide(direction) {
-            const slides = document.querySelectorAll(".analytics-images img");
+        let currentIndex = 0;
+        function moveSlide(direction) {
+            const slides = document.querySelectorAll(".slide-images .project");
             const totalSlides = slides.length;
-            analyticsIndex += direction;
-
-            if (analyticsIndex >= totalSlides) {
-                analyticsIndex = 0;
-            } else if (analyticsIndex < 0) {
-                analyticsIndex = totalSlides - 1;
-            }
-
-            const slideContainer = document.querySelector(".analytics-images");
-            const offset = -analyticsIndex * 100;
-            slideContainer.style.transform = `translateX(${offset}%)`;
+            currentIndex += direction;
+            if (currentIndex >= totalSlides) currentIndex = 0;
+            else if (currentIndex < 0) currentIndex = totalSlides - 1;
+            document.querySelector(".slide-images").style.transform = `translateX(${-currentIndex * 100}%)`;
         }
-
-        // Auto-play analytics slideshow
-        setInterval(() => moveAnalyticsSlide(1), 5000);
+        let analysisIndex = 0;
+        function cycleAnalysisSlides() {
+            const slides = document.querySelectorAll(".analysis-slide-images img");
+            analysisIndex = (analysisIndex + 1) % slides.length;
+            document.querySelector(".analysis-slide-images").style.transform = `translateX(${-analysisIndex * 100}%)`;
+        }
+        setInterval(cycleAnalysisSlides, 5000);
     </script>
 </body>
 </html>
