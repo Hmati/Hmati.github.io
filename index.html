@@ -13,114 +13,76 @@
             font-family: 'Poppins', sans-serif;
         }
         body {
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb);
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
             color: #333;
             text-align: center;
         }
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 20px;
         }
-        .hero img {
-            width: 150px;
-            height: 150px;
+        .profile img {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        .hero h1 {
-            font-size: 3rem;
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 15px;
             font-weight: 700;
         }
-        .hero p {
-            font-size: 1.5rem;
-            margin-top: 10px;
+        p {
+            font-size: 1.2rem;
+            color: #444;
         }
         .projects {
+            margin-top: 40px;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            padding: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         .project-card {
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            margin: 15px;
             border-radius: 10px;
             width: 300px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
         }
         .project-card:hover {
             transform: scale(1.05);
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
         }
         .project-card a {
             text-decoration: none;
-            color: #ff6b6b;
+            color: #ff3366;
             font-weight: bold;
-        }
-        .slideshow-container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            position: relative;
-        }
-        .slides {
-            display: flex;
-            transition: transform 1s ease-in-out;
-        }
-        .slide {
-            min-width: 100%;
-        }
-        .slide img {
-            width: 100%;
-            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <img src="https://github.com/Hmati.png" alt="Hellen Mati Profile Photo">
+    <div class="container">
+        <div class="profile">
+            <img src="https://drive.google.com/uc?export=view&id=1Qu1Rt7SxS0pQ0wY38G8a7F-LG0yvvOJD" alt="Hellen Mati">
+        </div>
         <h1>Hellen Mati</h1>
         <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
-    </div>
-    
-    <div class="slideshow-container">
-        <div class="slides">
-            <div class="slide"><img src="https://source.unsplash.com/800x400/?data" alt="Data Visualization"></div>
-            <div class="slide"><img src="https://source.unsplash.com/800x400/?technology" alt="Tech Analysis"></div>
-            <div class="slide"><img src="https://source.unsplash.com/800x400/?business" alt="Business Insights"></div>
+        
+        <div class="projects">
+            <div class="project-card">
+                <h3>Data Analysis with SQL</h3>
+                <p>Using SQL to analyze structured data effectively.</p>
+                <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Customer Churn Prediction</h3>
+                <p>Predicting customer churn with Apache Spark.</p>
+                <a href="https://github.com/Hmati/Customer-Churn-Prediction">View Project</a>
+            </div>
         </div>
     </div>
-    
-    <div class="projects">
-        <div class="project-card">
-            <h3>Data Analysis with SQL</h3>
-            <p>Using SQL to analyze structured data effectively.</p>
-            <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
-        </div>
-        <div class="project-card">
-            <h3>Customer Churn Prediction</h3>
-            <p>Predicting customer churn with Apache Spark.</p>
-            <a href="https://github.com/Hmati/Customer-Churn-Prediction">View Project</a>
-        </div>
-    </div>
-    
-    <script>
-        let index = 0;
-        function slideShow() {
-            const slides = document.querySelector('.slides');
-            index++;
-            if (index > 2) { index = 0; }
-            slides.style.transform = `translateX(${-index * 100}%)`;
-        }
-        setInterval(slideShow, 4000);
-    </script>
 </body>
 </html>
