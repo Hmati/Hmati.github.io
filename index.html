@@ -8,121 +8,145 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #87CEEB;
+            background-color: #87CEEB; /* Sky blue background */
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
         .container {
             max-width: 900px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: #FFDFDD;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .profile {
+            width: 30%;
+            padding-right: 20px;
             text-align: center;
         }
         .profile img {
-            width: 150px;
+            width: 80%;
             border-radius: 50%;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .details {
+            width: 65%;
+        }
+        .projects {
+            width: 100%;
+            margin-top: 20px;
         }
         h1, h2 {
             color: #333;
         }
-        .about p {
-            color: #555;
-            line-height: 1.6;
-        }
-        .links a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 15px;
+        a {
             text-decoration: none;
-            color: white;
-            background-color: #007BFF;
-            border-radius: 5px;
-            transition: 0.3s;
+            color: #007BFF;
         }
-        .links a:hover {
-            background-color: #0056b3;
-        }
-        .slide-container {
+        /* Analytical Slideshow */
+        .analytics-container {
             position: relative;
             max-width: 100%;
-            overflow: hidden;
             margin-top: 20px;
-        }
-        .slide-images {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            padding: 20px;
-            background: #f9f9f9;
+            overflow: hidden;
             border-radius: 8px;
         }
+        .analytics-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .analytics-images img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        /* Slide Show Controls */
         .prev, .next {
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
             padding: 10px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
             cursor: pointer;
+            font-size: 18px;
+            transform: translate(0, -50%);
         }
-        .prev { left: 0; }
-        .next { right: 0; }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile">
-            <img src="https://drive.google.com/uc?export=view&id=1Qu1Rt7SxS0pQ0wY38G8a7F-LG0yvvOJD" alt="Hellen Mati">
+            <img src="https://drive.google.com/uc?export=view&id=1Qu1Rt7SxS0pQ0wY38G8a7F-LG0yvvOJD" alt="Hellen Mati"> <!-- Catchy profile image -->
             <h1>Hellen Mati</h1>
             <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
+            <div class="about">
+                <h2>About Me</h2>
+                <p>I am an experienced Data Engineer with a passion for developing scalable data pipelines and leveraging real-time analytics to drive business insights. I specialize in cloud-based solutions using technologies like Python, SQL, and Azure. My work is driven by the mission to create data-driven solutions that empower businesses to make informed decisions. I enjoy mentoring others and sharing my knowledge in data engineering and analytics.</p>
+            </div>
+            <p><a href="https://www.linkedin.com/in/hellen-mati">View My LinkedIn Profile</a></p>
+            <p><a href="https://github.com/Hmati">View My GitHub Profile</a></p>
         </div>
-        <div class="about">
-            <h2>About Me</h2>
-            <p>I specialize in designing scalable data pipelines, real-time analytics, and cloud-based solutions using Python, SQL, and Azure. Passionate about data-driven decision-making and mentoring in data engineering and analytics.</p>
-        </div>
-        <div class="links">
-            <a href="https://www.linkedin.com/in/hellen-mati" target="_blank">LinkedIn</a>
-            <a href="https://github.com/Hmati" target="_blank">GitHub</a>
-        </div>
-        <div class="slide-container">
-            <div class="slide-images">
-                <div class="slide">
-                    <h3>Data Analysis with SQL</h3>
-                    <p>Using SQL for querying and analyzing structured data.</p>
-                    <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
+        <div class="details">
+            <h2>Portfolio</h2>
+            <!-- Analytical Slideshow -->
+            <div class="analytics-container">
+                <div class="analytics-images">
+                    <img src="https://www.example.com/analysis1.jpg" alt="Data Analysis Example 1">
+                    <img src="https://www.example.com/analysis2.jpg" alt="Data Analysis Example 2">
+                    <img src="https://www.example.com/analysis3.jpg" alt="Data Analysis Example 3">
                 </div>
-                <div class="slide">
-                    <h3>Customer Churn Prediction</h3>
-                    <p>Predicting customer churn using Apache Spark and machine learning.</p>
-                    <a href="https://github.com/Hmati/Customer-Churn-Prediction">View Project</a>
+                <button class="prev" onclick="moveAnalyticsSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveAnalyticsSlide(1)">&#10095;</button>
+            </div>
+            <!-- Project List -->
+            <div class="projects">
+                <div class="project">
+                    <div>
+                        <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL"><h3>Data Analysis with SQL</h3></a>
+                        <p>Using SQL for querying and analyzing structured data.</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div>
+                        <a href="https://github.com/Hmati/Customer-Churn-Prediction"><h3>Customer Churn Prediction</h3></a>
+                        <p>Predicting customer churn using Apache Spark and machine learning.</p>
+                    </div>
                 </div>
             </div>
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
     </div>
+
     <script>
-        let index = 0;
-        function moveSlide(direction) {
-            const slides = document.querySelectorAll(".slide");
+        let analyticsIndex = 0;
+
+        function moveAnalyticsSlide(direction) {
+            const slides = document.querySelectorAll(".analytics-images img");
             const totalSlides = slides.length;
-            index += direction;
-            if (index >= totalSlides) index = 0;
-            if (index < 0) index = totalSlides - 1;
-            document.querySelector(".slide-images").style.transform = `translateX(${-index * 100}%)`;
+            analyticsIndex += direction;
+
+            if (analyticsIndex >= totalSlides) {
+                analyticsIndex = 0;
+            } else if (analyticsIndex < 0) {
+                analyticsIndex = totalSlides - 1;
+            }
+
+            const slideContainer = document.querySelector(".analytics-images");
+            const offset = -analyticsIndex * 100;
+            slideContainer.style.transform = `translateX(${offset}%)`;
         }
+
+        // Auto-play analytics slideshow
+        setInterval(() => moveAnalyticsSlide(1), 5000);
     </script>
 </body>
 </html>
