@@ -3,49 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hellen Mati - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Hellen Mati - Data Engineer | Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
+
         body {
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
             color: #333;
             text-align: center;
+            padding: 20px;
         }
+
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: auto;
-            padding: 50px 20px;
         }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .profile:hover {
+            transform: scale(1.05);
+        }
+
         .profile img {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
         }
+
+        .profile img:hover {
+            transform: scale(1.1);
+        }
+
         h1 {
             font-size: 2.5rem;
-            margin-top: 15px;
-            font-weight: 700;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #444;
-        }
-        .about-me {
-            font-size: 1.1rem;
-            color: #444;
+            color: #333;
             margin-top: 20px;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        .cta {
+            margin-top: 20px;
+        }
+
+        .cta a {
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 50px;
+            background-color: #ff3366;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta a:hover {
+            background-color: #d02b58;
+        }
+
         .projects {
             margin-top: 40px;
             display: flex;
@@ -53,24 +85,27 @@
             flex-wrap: wrap;
             gap: 20px;
         }
+
         .project-card {
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
-            width: 300px;
+            width: 280px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
         }
+
         .project-card:hover {
             transform: scale(1.05);
         }
+
         .project-card a {
             text-decoration: none;
             color: #ff3366;
             font-weight: bold;
         }
-        /* Slideshow styles */
+
         .slideshow-container {
             position: relative;
             max-width: 100%;
@@ -84,8 +119,8 @@
         .slide img {
             width: 100%;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .caption {
@@ -102,15 +137,14 @@
             display: block;
         }
 
-        /* Animation */
-        .fade {
-            animation: fade 1.5s ease-in-out;
-        }
-
         @keyframes fade {
             0% { opacity: 0; }
             50% { opacity: 1; }
             100% { opacity: 0; }
+        }
+
+        .fade {
+            animation: fade 1.5s ease-in-out;
         }
     </style>
 </head>
@@ -118,14 +152,17 @@
     <div class="container">
         <!-- Profile Section -->
         <div class="profile">
-            <img src="https://drive.usercontent.google.com/download?id=1Qu1Rt7SxS0pQ0wY38G8a7F-LG0yvvOJD&export=view&authuser=0" alt="Hellen Mati">
-        </div>
-        <h1>Hellen Mati</h1>
-        <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
+            <a href="https://github.com/Hmati" target="_blank">
+                <img src="https://avatars.githubusercontent.com/u/43524634?v=4" alt="Hellen Mati">
+            </a>
+            <h1>Hellen Mati</h1>
+            <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
 
-        <!-- About Me Section -->
-        <div class="about-me">
-            <p>Hi! I'm Hellen Mati, a passionate data professional with expertise in cloud data solutions and analytics. With a strong background in data engineering and a keen interest in driving data-driven decisions, I aim to empower businesses with scalable data solutions. I'm continuously improving my skills in machine learning, cloud technologies, and advanced analytics to contribute to impactful and inclusive data science practices.</p>
+            <!-- CTA (LinkedIn & GitHub) -->
+            <div class="cta">
+                <a href="https://www.linkedin.com/in/hellen-mati" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Hmati" target="_blank">GitHub</a>
+            </div>
         </div>
 
         <!-- Slideshow Section -->
