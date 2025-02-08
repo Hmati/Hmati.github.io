@@ -13,7 +13,7 @@
             font-family: 'Poppins', sans-serif;
         }
         body {
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);
             color: #333;
             text-align: center;
         }
@@ -36,6 +36,15 @@
         p {
             font-size: 1.2rem;
             color: #444;
+        }
+        .about-me {
+            font-size: 1.1rem;
+            color: #444;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .projects {
             margin-top: 40px;
@@ -107,11 +116,17 @@
 </head>
 <body>
     <div class="container">
+        <!-- Profile Section -->
         <div class="profile">
             <img src="https://drive.google.com/uc?export=view&id=1Qu1Rt7SxS0pQ0wY38G8a7F-LG0yvvOJD" alt="Hellen Mati">
         </div>
         <h1>Hellen Mati</h1>
         <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
+
+        <!-- About Me Section -->
+        <div class="about-me">
+            <p>Hi! I'm Hellen Mati, a passionate data professional with expertise in cloud data solutions and analytics. With a strong background in data engineering and a keen interest in driving data-driven decisions, I aim to empower businesses with scalable data solutions. I'm continuously improving my skills in machine learning, cloud technologies, and advanced analytics to contribute to impactful and inclusive data science practices.</p>
+        </div>
 
         <!-- Slideshow Section -->
         <div class="slideshow-container">
@@ -131,6 +146,7 @@
             </div>
         </div>
 
+        <!-- Projects Section -->
         <div class="projects">
             <div class="project-card">
                 <h3>Data Analysis with SQL</h3>
@@ -154,7 +170,7 @@
                 slides[i].classList.remove("active");
             }
             slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
+            if (slideIndex > slides.length) { slideIndex = 1 }
             slides[slideIndex - 1].classList.add("active");
             setTimeout(showSlides, 3000); // Change slide every 3 seconds
         }
