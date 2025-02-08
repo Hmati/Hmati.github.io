@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f7c7e7; /* Baby pink background */
+            background-color: #87CEEB; /* Sky blue background */
             margin: 0;
             padding: 20px;
             display: flex;
@@ -26,10 +26,12 @@
         .profile {
             width: 30%;
             padding-right: 20px;
+            text-align: center;
         }
         .profile img {
-            width: 100%;
+            width: 80%;
             border-radius: 50%;
+            margin-bottom: 20px;
         }
         .details {
             width: 65%;
@@ -70,14 +72,45 @@
             border-radius: 8px;
             background-color: #f9f9f9;
         }
+        /* Slide Show */
+        .slide-container {
+            position: relative;
+            max-width: 100%;
+            margin-top: 20px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .slide-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slide-images img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transform: translate(0, -50%);
+        }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile">
-            <img src="https://media.licdn.com/dms/image/C4E03AQFBrOoA3-KNFA/profile-displayphoto-shrink_800_800/0/1590706848097?e=1682553600&v=beta&t=c1EKm_GftcYP_vQt93TKNcn4_0F-v2fLfMxQwXROjvI" alt="Hellen Mati"> <!-- LinkedIn photo -->
-        </div>
-        <div class="details">
+            <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Hellen Mati"> <!-- Catchy profile image -->
             <h1>Hellen Mati</h1>
             <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
             <div class="about">
@@ -87,33 +120,48 @@
             <p><a href="https://www.linkedin.com/in/hellen-mati">View My LinkedIn Profile</a></p>
             <p><a href="https://github.com/Hmati">View My GitHub Profile</a></p>
         </div>
-        <div class="projects">
+        <div class="details">
             <h2>Portfolio</h2>
-            <div class="project">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="SQL Analysis">
-                <div>
-                    <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL"><h3>Data Analysis with SQL</h3></a>
-                    <p>Using SQL for querying and analyzing structured data.</p>
-                    <div class="sample-output">
-                        <h4>Expected Output:</h4>
-                        <p><strong>Query Result:</strong> A table displaying the analysis of sales data, customer demographics, and trends.</p>
-                        <img src="https://www.w3schools.com/sql/img/intro_sql.jpg" alt="SQL Query Sample Output" width="100%">
+            <!-- Slide Show -->
+            <div class="slide-container">
+                <div class="slide-images">
+                    <div class="project">
+                        <div>
+                            <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL"><h3>Data Analysis with SQL</h3></a>
+                            <p>Using SQL for querying and analyzing structured data.</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div>
+                            <a href="https://github.com/Hmati/Customer-Churn-Prediction"><h3>Customer Churn Prediction</h3></a>
+                            <p>Predicting customer churn using Apache Spark and machine learning.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="project">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Apache_Spark_logo.svg" alt="Apache Spark">
-                <div>
-                    <a href="https://github.com/Hmati/Customer-Churn-Prediction"><h3>Customer Churn Prediction</h3></a>
-                    <p>Predicting customer churn using Apache Spark and machine learning.</p>
-                    <div class="sample-output">
-                        <h4>Expected Output:</h4>
-                        <p><strong>Churn Prediction:</strong> A model predicting customer churn likelihood with visualizations of the data distribution.</p>
-                        <img src="https://spark.apache.org/docs/latest/img/spark-logo-trademark.png" alt="Customer Churn Prediction Output" width="100%">
-                    </div>
-                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
             </div>
         </div>
     </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveSlide(direction) {
+            const slides = document.querySelectorAll(".slide-images .project");
+            const totalSlides = slides.length;
+            currentIndex += direction;
+
+            if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+            }
+
+            const slideContainer = document.querySelector(".slide-images");
+            const offset = -currentIndex * 100;
+            slideContainer.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
 </body>
 </html>
