@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hellen Mati  Portfolio</title>
+    <title>Hellen Mati's GitHub Projects</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,12 +33,25 @@
             color: #007BFF;
             font-size: 18px;
         }
+        img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
     </style>
 </head>
 <body>
     <h1>Hellen Mati's GitHub Projects</h1>
     <p>Here are some of my projects hosted on GitHub:</p>
-    <ul id="repo-list"></ul>
+    <ul id="repo-list">
+        <li>
+            <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="SQL Logo">
+                DATA-ANALYSIS-WITH-SQL
+            </a>
+        </li>
+    </ul>
 
     <script>
         async function fetchRepos() {
@@ -47,17 +60,18 @@
             const list = document.getElementById("repo-list");
 
             repos.forEach(repo => {
-                const listItem = document.createElement("li");
-                const link = document.createElement("a");
-                link.href = repo.html_url;
-                link.target = "_blank";
-                link.textContent = repo.name;
-                listItem.appendChild(link);
-                list.appendChild(listItem);
+                if (repo.name !== "DATA-ANALYSIS-WITH-SQL") {
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = repo.html_url;
+                    link.target = "_blank";
+                    link.textContent = repo.name;
+                    listItem.appendChild(link);
+                    list.appendChild(listItem);
+                }
             });
         }
         fetchRepos();
     </script>
 </body>
 </html>
- 
