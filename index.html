@@ -61,17 +61,76 @@
             color: #ff3366;
             font-weight: bold;
         }
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin-top: 50px;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Animation */
+        .fade {
+            animation: fade 1.5s ease-in-out;
+        }
+
+        @keyframes fade {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile">
-            <!-- Replace with direct image URL -->
-            <img src="https://www.example.com/path-to-your-image.jpg" alt="Hellen Mati">
+            <img src="https://drive.google.com/uc?export=view&id=1Qu1Rt7SxS0pQ0wY38G8a7F-LG0yvvOJD" alt="Hellen Mati">
         </div>
         <h1>Hellen Mati</h1>
         <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
-        
+
+        <!-- Slideshow Section -->
+        <div class="slideshow-container">
+            <div class="slide fade active">
+                <img src="https://example.com/descriptive-analytics.jpg" alt="Descriptive Analytics">
+                <div class="caption">Descriptive Analytics</div>
+            </div>
+
+            <div class="slide fade">
+                <img src="https://example.com/predictive-analytics.jpg" alt="Predictive Analytics">
+                <div class="caption">Predictive Analytics</div>
+            </div>
+
+            <div class="slide fade">
+                <img src="https://example.com/prescriptive-analytics.jpg" alt="Prescriptive Analytics">
+                <div class="caption">Prescriptive Analytics</div>
+            </div>
+        </div>
+
         <div class="projects">
             <div class="project-card">
                 <h3>Data Analysis with SQL</h3>
@@ -85,5 +144,22 @@
             </div>
         </div>
     </div>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex - 1].classList.add("active");
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+
+        showSlides(); // Initial call to start slideshow
+    </script>
 </body>
 </html>
