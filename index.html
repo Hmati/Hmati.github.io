@@ -3,103 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Hellen Mati - Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            background-color: #f4f4f4;
             margin: 0;
-            padding: 0;
-            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
         }
-        h1 {
-            color: #fff;
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .profile {
+            width: 30%;
+            padding-right: 20px;
+        }
+        .profile img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        .details {
+            width: 65%;
+        }
+        .projects {
+            width: 100%;
             margin-top: 20px;
         }
-        .slider {
-            width: 80%;
-            max-width: 800px;
-            margin: 20px auto;
-            overflow: hidden;
-            position: relative;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-        }
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            text-align: center;
+        h1, h2 {
+            color: #333;
         }
         a {
             text-decoration: none;
-            color: #FFD700;
-            font-size: 20px;
-            font-weight: bold;
+            color: #007BFF;
         }
-        img {
-            width: 120px;
+        .project {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        .project img {
+            width: 150px;
             height: auto;
-            display: block;
-            margin: 10px auto;
+            margin-right: 20px;
         }
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 50%;
-        }
-        .prev { left: 10px; }
-        .next { right: 10px; }
     </style>
 </head>
 <body>
-    <h1>My  Portfolio</h1>
-    <p>Projects Data Analysis & Data Engineering:</p>
-    <div class="slider">
-        <div class="slides">
-            <div class="slide">
-                <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="SQL Logo">
-                    DATA-ANALYSIS-WITH-SQL
-                </a>
+    <div class="container">
+        <div class="profile">
+            <img src="profile.jpg" alt="Hellen Mati">
+        </div>
+        <div class="details">
+            <h1>Hellen Mati</h1>
+            <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
+            <p>Experienced in building scalable data pipelines, real-time analytics, and cloud-based solutions using Python, SQL, and Azure.</p>
+            <p><a href="https://www.linkedin.com/in/hellen-mati">View My LinkedIn Profile</a></p>
+            <p><a href="https://github.com/Hmati">View My GitHub Profile</a></p>
+        </div>
+        <div class="projects">
+            <h2>Portfolio</h2>
+            <div class="project">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="SQL Analysis">
+                <div>
+                    <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL"><h3>Data Analysis with SQL</h3></a>
+                    <p>Using SQL for querying and analyzing structured data.</p>
+                </div>
             </div>
-            <div class="slide">
-                <a href="https://github.com/Hmati/Tracking-Crypto-Price-Trends" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bitcoin_logo.svg" alt="Crypto Analysis">
-                    Tracking Crypto Price Trends
-                </a>
-            </div>
-            <div class="slide">
-                <a href="https://github.com/Hmati/Customer-Churn-Prediction" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Bar_Chart_Icon.svg" alt="Churn Analysis">
-                    Customer Churn Prediction
-                </a>
+            <div class="project">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Apache_Spark_logo.svg" alt="Apache Spark">
+                <div>
+                    <a href="https://github.com/Hmati/Customer-Churn-Prediction"><h3>Customer Churn Prediction</h3></a>
+                    <p>Predicting customer churn using Apache Spark and machine learning.</p>
+                </div>
             </div>
         </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
-
-    <script>
-        let index = 0;
-        function moveSlide(direction) {
-            const slides = document.querySelector('.slides');
-            const totalSlides = document.querySelectorAll('.slide').length;
-            index = (index + direction + totalSlides) % totalSlides;
-            slides.style.transform = `translateX(-${index * 100}%)`;
-        }
-    </script>
 </body>
 </html>
