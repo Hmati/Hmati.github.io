@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hellen Mati - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #f7c7e7; /* Baby pink background */
             margin: 0;
             padding: 20px;
@@ -55,17 +56,34 @@
             height: auto;
             margin-right: 20px;
         }
+        .about {
+            margin-top: 20px;
+        }
+        .about p {
+            color: #555;
+        }
+        .sample-output {
+            width: 100%;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile">
-            <img src="https://avatars.githubusercontent.com/u/12345678?v=4" alt="Hellen Mati"> <!-- Replace with your GitHub profile image URL -->
+            <img src="https://media.licdn.com/dms/image/C4E03AQFBrOoA3-KNFA/profile-displayphoto-shrink_800_800/0/1590706848097?e=1682553600&v=beta&t=c1EKm_GftcYP_vQt93TKNcn4_0F-v2fLfMxQwXROjvI" alt="Hellen Mati"> <!-- LinkedIn photo -->
         </div>
         <div class="details">
             <h1>Hellen Mati</h1>
             <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
-            <p>Experienced in building scalable data pipelines, real-time analytics, and cloud-based solutions using Python, SQL, and Azure.</p>
+            <div class="about">
+                <h2>About Me</h2>
+                <p>I am an experienced Data Engineer with a passion for developing scalable data pipelines and leveraging real-time analytics to drive business insights. I specialize in cloud-based solutions using technologies like Python, SQL, and Azure. My work is driven by the mission to create data-driven solutions that empower businesses to make informed decisions. I enjoy mentoring others and sharing my knowledge in data engineering and analytics.</p>
+            </div>
             <p><a href="https://www.linkedin.com/in/hellen-mati">View My LinkedIn Profile</a></p>
             <p><a href="https://github.com/Hmati">View My GitHub Profile</a></p>
         </div>
@@ -76,6 +94,11 @@
                 <div>
                     <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL"><h3>Data Analysis with SQL</h3></a>
                     <p>Using SQL for querying and analyzing structured data.</p>
+                    <div class="sample-output">
+                        <h4>Expected Output:</h4>
+                        <p><strong>Query Result:</strong> A table displaying the analysis of sales data, customer demographics, and trends.</p>
+                        <img src="https://www.w3schools.com/sql/img/intro_sql.jpg" alt="SQL Query Sample Output" width="100%">
+                    </div>
                 </div>
             </div>
             <div class="project">
@@ -83,6 +106,11 @@
                 <div>
                     <a href="https://github.com/Hmati/Customer-Churn-Prediction"><h3>Customer Churn Prediction</h3></a>
                     <p>Predicting customer churn using Apache Spark and machine learning.</p>
+                    <div class="sample-output">
+                        <h4>Expected Output:</h4>
+                        <p><strong>Churn Prediction:</strong> A model predicting customer churn likelihood with visualizations of the data distribution.</p>
+                        <img src="https://spark.apache.org/docs/latest/img/spark-logo-trademark.png" alt="Customer Churn Prediction Output" width="100%">
+                    </div>
                 </div>
             </div>
         </div>
