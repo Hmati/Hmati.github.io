@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hellen Mati - Data Engineer | Data Analyst</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         body {
@@ -58,7 +58,7 @@
 
         .cta a {
             display: inline-block;
-            padding: 12px 18px;
+            padding: 10px 20px;
             margin: 10px 5px;
             border-radius: 50px;
             background-color: #ff3366;
@@ -84,7 +84,7 @@
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
-            width: 320px;
+            width: 300px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -96,32 +96,40 @@
             margin-bottom: 10px;
         }
 
-        .project-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 10px;
         }
 
-        .project-card p {
-            font-size: 0.95rem;
-            color: #444;
-            margin-bottom: 12px;
-        }
-
-        .project-card .view-button {
+        .tool {
+            background-color: #ff3366;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             display: inline-block;
-            padding: 10px 16px;
+        }
+
+        .view-button {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
             background-color: #ff3366;
             color: white;
             text-decoration: none;
-            font-weight: 600;
-            border-radius: 5px;
-            transition: 0.3s ease;
-            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
         }
 
-        .project-card .view-button:hover {
+        .view-button:hover {
             background-color: #d02b58;
         }
+
     </style>
 </head>
 <body>
@@ -130,8 +138,8 @@
         <div class="profile">
             <img src="https://avatars.githubusercontent.com/u/73826985?v=4" alt="Hellen Mati">
             <h1>Hellen Mati</h1>
-            <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
-            <p>Innovative and results-driven Data Analyst & Data Engineer with a strong track record of designing, developing, and managing cloud-based data solutions using Microsoft Azure. Passionate about transforming raw data into meaningful business insights, optimizing ETL pipelines, and enhancing data storage efficiency to drive informed decision-making.</p>
+            <p><strong>Data Engineer | Data Analyst | Cloud Solutions Expert</strong></p>
+            <p>Innovative and results-driven Data Engineer & Data Analyst with a strong track record of designing, developing, and managing cloud-based data solutions using Microsoft Azure. Passionate about transforming raw data into meaningful business insights, optimizing ETL pipelines, and enhancing data storage efficiency.</p>
             <div class="cta">
                 <a href="https://www.linkedin.com/in/hellen-mati" target="_blank">LinkedIn</a>
                 <a href="https://github.com/Hmati" target="_blank">GitHub</a>
@@ -140,46 +148,58 @@
 
         <!-- Projects Section -->
         <div class="projects">
+
+            <!-- SQL Project -->
             <div class="project-card">
                 <img src="https://i.postimg.cc/QM1YxX5w/sqlnew.jpg" alt="SQL Data Analysis">
                 <h3>Sales Data Mining Project</h3>
-                <p><strong>Objective:</strong> Conduct an in-depth analysis of sales data to derive valuable insights into sales performance, identify emerging trends, and develop data-driven business strategies for improved decision-making.</p>
-                <p><strong>Tools:</strong> SQL, Jupyter Notebooks</p>
+                <p><strong>Objective:</strong> Conduct an in-depth analysis of sales data to derive insights, identify trends, and develop data-driven strategies.</p>
+                <div class="tools">
+                    <span class="tool">SQL</span>
+                    <span class="tool">Jupyter Notebooks</span>
+                </div>
                 <a class="view-button" href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
             </div>
 
-            <div class="project-card">
-                <img src="https://i.postimg.cc/qq0PdN51/Churn-Analysis.png" alt="Customer Churn Prediction">
-                <h3>Customer Churn Prediction</h3>
-                <p><strong>Skills:</strong> Predictive Analytics, Machine Learning</p>
-                <p><strong>Tools:</strong> Apache Spark, PySpark</p>
-                <a class="view-button" href="https://github.com/Hmati/Customer-Churn-Prediction">View Project</a>
-            </div>
-
+            <!-- Pizza Sales Analysis -->
             <div class="project-card">
                 <img src="https://i.postimg.cc/Jh7D4VvZ/Pizza-sales.png" alt="Pizza Sales Analysis">
                 <h3>Pizza Sales Analysis</h3>
-                <p><strong>Project Overview:</strong> This project analyzes pizza sales data to uncover business insights, such as sales trends, customer preferences, and inventory optimization.</p>
-                <p><strong>Tools:</strong> SQL (MySQL), Excel, MySQL Workbench</p>
+                <p><strong>Overview:</strong> Analyzing pizza sales data to uncover insights on sales trends and customer preferences.</p>
+                <div class="tools">
+                    <span class="tool">SQL (MySQL)</span>
+                    <span class="tool">Excel</span>
+                    <span class="tool">MySQL Workbench</span>
+                </div>
                 <a class="view-button" href="https://github.com/Hmati/Sales-Analysis-With-Excel">View Project</a>
             </div>
 
+            <!-- ETL Data Pipeline -->
             <div class="project-card">
-                <img src="https://i.postimg.cc/wT4VTm5v/Sales-data-analysis-for-sales-managers.png" alt="ETL Data Pipeline">
-                <h3>ETL Data Pipeline for Global Superstore Analytics</h3>
-                <p><strong>Project Overview:</strong> This project demonstrates a complete ETL pipeline using real-world datasets to extract, transform, and load sales and geolocation data for reporting.</p>
-                <p><strong>Tools:</strong> Python, Jupyter Notebooks, Pandas, SQLite</p>
+                <img src="https://i.postimg.cc/wT4VTm5v/Sales-data-analysis-for-sales-managers.png" alt="ETL Pipeline">
+                <h3>ETL Data Pipeline for Global Superstore</h3>
+                <p><strong>Overview:</strong> Extract, transform, and load sales data into a SQLite database for analytics.</p>
+                <div class="tools">
+                    <span class="tool">Python</span>
+                    <span class="tool">Pandas</span>
+                    <span class="tool">SQLite</span>
+                </div>
                 <a class="view-button" href="https://github.com/Hmati/-ETL-Data-Pipeline-for-Global-Superstore-Analytics">View Project</a>
             </div>
-			
-			<div class="project-card">
-            <img src="https://i.postimg.cc/JzP05nJD/spotify-Header-1024x576.jpg" alt="Spotify EDA">
-            <h3>Spotify EDA Project</h3>
-            <p><strong>Project Objective:</strong> This data analysis project explores insights from the top songs across different decades using Spotify's "All Out" playlists.</p>
-            <p><strong>Tools:</strong> Python, Pandas, Jupyter Notebooks</p>
-            <a class="view-button" href="https://github.com/Hmati/DataScience/blob/main/Project%2003%20Spotify.ipynb">View Project</a>
-           </div>
-			
+
+            <!-- Spotify EDA -->
+            <div class="project-card">
+                <img src="https://i.postimg.cc/JzP05nJD/spotify-Header-1024x576.jpg" alt="Spotify EDA">
+                <h3>Spotify EDA Project</h3>
+                <p><strong>Objective:</strong> Analyze data from top songs across different decades using Spotify’s "All Out" playlists.</p>
+                <div class="tools">
+                    <span class="tool">Python</span>
+                    <span class="tool">Pandas</span>
+                    <span class="tool">Jupyter Notebooks</span>
+                </div>
+                <a class="view-button" href="https://github.com/Hmati/DataScience/blob/main/Project%2003%20Spotify.ipynb">View Project</a>
+            </div>
+
         </div>
     </div>
 </body>
