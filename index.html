@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hellen Mati - Data Engineer | Data Analyst</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
@@ -58,7 +58,7 @@
 
         .cta a {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 18px;
             margin: 10px 5px;
             border-radius: 50px;
             background-color: #ff3366;
@@ -84,7 +84,7 @@
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
-            width: 300px;
+            width: 320px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -94,6 +94,33 @@
             height: auto;
             border-radius: 10px;
             margin-bottom: 10px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 12px;
+        }
+
+        .project-card .view-button {
+            display: inline-block;
+            padding: 10px 16px;
+            background-color: #ff3366;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .project-card .view-button:hover {
+            background-color: #d02b58;
         }
     </style>
 </head>
@@ -118,7 +145,7 @@
                 <h3>Sales Data Mining Project</h3>
                 <p><strong>Objective:</strong> Conduct an in-depth analysis of sales data to derive valuable insights into sales performance, identify emerging trends, and develop data-driven business strategies for improved decision-making.</p>
                 <p><strong>Tools:</strong> SQL, Jupyter Notebooks</p>
-                <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
+                <a class="view-button" href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
             </div>
 
             <div class="project-card">
@@ -126,15 +153,23 @@
                 <h3>Customer Churn Prediction</h3>
                 <p><strong>Skills:</strong> Predictive Analytics, Machine Learning</p>
                 <p><strong>Tools:</strong> Apache Spark, PySpark</p>
-                <a href="https://github.com/Hmati/Customer-Churn-Prediction">View Project</a>
+                <a class="view-button" href="https://github.com/Hmati/Customer-Churn-Prediction">View Project</a>
             </div>
 
             <div class="project-card">
                 <img src="https://i.postimg.cc/Jh7D4VvZ/Pizza-sales.png" alt="Pizza Sales Analysis">
                 <h3>Pizza Sales Analysis</h3>
-                <p><strong>Project Overview:</strong> This project analyzes pizza sales data to uncover business insights, such as sales trends, customer preferences, and inventory optimization. The data is sourced from a MySQL database, processed with SQL queries, and visualized in Excel to deliver actionable insights.</p>
+                <p><strong>Project Overview:</strong> This project analyzes pizza sales data to uncover business insights, such as sales trends, customer preferences, and inventory optimization.</p>
                 <p><strong>Tools:</strong> SQL (MySQL), Excel, MySQL Workbench</p>
-                <a href="https://github.com/Hmati/Sales-Analysis-With-Excel">View Project</a>
+                <a class="view-button" href="https://github.com/Hmati/Sales-Analysis-With-Excel">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <img src="https://i.postimg.cc/wT4VTm5v/Sales-data-analysis-for-sales-managers.png" alt="ETL Data Pipeline">
+                <h3>ETL Data Pipeline for Global Superstore Analytics</h3>
+                <p><strong>Project Overview:</strong> This project demonstrates a complete ETL pipeline using real-world datasets to extract, transform, and load sales and geolocation data for reporting.</p>
+                <p><strong>Tools:</strong> Python, Jupyter Notebooks, Pandas, SQLite</p>
+                <a class="view-button" href="https://github.com/Hmati/-ETL-Data-Pipeline-for-Global-Superstore-Analytics">View Project</a>
             </div>
         </div>
     </div>
