@@ -14,23 +14,27 @@
         }
 
         body {
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
             color: #333;
             text-align: center;
-            padding: 40px;
+            padding: 20px;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: auto;
         }
 
         .profile {
-            background-color: white;
-            padding: 40px;
-            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s;
         }
 
         .profile:hover {
@@ -38,91 +42,103 @@
         }
 
         .profile img {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .profile img:hover {
+            transform: scale(1.1);
         }
 
         h1 {
-            font-size: 2.8rem;
-            margin-top: 15px;
+            font-size: 2.5rem;
+            color: #333;
+            margin-top: 20px;
         }
 
-        .about {
+        .cta {
             margin-top: 20px;
-            font-size: 1.1rem;
-            color: #555;
         }
 
         .cta a {
-            display: inline-block;
-            margin: 15px 10px;
-            padding: 12px 24px;
-            border-radius: 30px;
-            background: #ff3366;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 50px;
+            background-color: #ff3366;
             color: white;
-            font-weight: bold;
             text-decoration: none;
-            transition: 0.3s;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
         }
 
         .cta a:hover {
-            background: #d02b58;
+            background-color: #d02b58;
         }
 
         .projects {
-            margin-top: 50px;
+            margin-top: 40px;
             display: flex;
             justify-content: center;
-            gap: 20px;
             flex-wrap: wrap;
+            gap: 20px;
         }
 
         .project-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            border-radius: 15px;
-            width: 300px;
+            border-radius: 10px;
+            width: 320px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
         }
 
         .project-card:hover {
             transform: scale(1.05);
         }
 
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
         .project-card a {
-            color: #ff3366;
             text-decoration: none;
+            color: #ff3366;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Profile Section -->
         <div class="profile">
-            <img src="https://avatars.githubusercontent.com/u/73826985?v=4" alt="Hellen Mati">
+            <a href="https://github.com/Hmati" target="_blank">
+                <img src="https://avatars.githubusercontent.com/u/73826985?v=4" alt="Hellen Mati">
+            </a>
             <h1>Hellen Mati</h1>
-            <p class="about">Innovative and results-driven Data Analyst & Data Engineer with a strong track record of designing, developing, and managing cloud-based data solutions using Microsoft Azure. Passionate about transforming raw data into meaningful business insights and optimizing ETL pipelines.</p>
+            <p>Innovative and results-driven Data Analyst & Data Engineer with a strong track record of designing, developing, and managing cloud-based data solutions using Microsoft Azure.</p>
             <div class="cta">
                 <a href="https://www.linkedin.com/in/hellen-mati" target="_blank">LinkedIn</a>
                 <a href="https://github.com/Hmati" target="_blank">GitHub</a>
             </div>
         </div>
 
-        <!-- Projects Section -->
         <div class="projects">
             <div class="project-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_query.png" alt="SQL Code Example">
                 <h3>Data Analysis with SQL</h3>
-                <p>Using SQL to analyze structured data effectively.</p>
+                <p>Skills: Data Cleaning | Tools: SQL, Jupyter Notebooks</p>
                 <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
             </div>
             <div class="project-card">
+                <img src="https://miro.medium.com/v2/resize:fit:800/format:webp/1*TL3PgH_6OgY42R6riZfp8g.png" alt="Customer Churn Prediction">
                 <h3>Customer Churn Prediction</h3>
-                <p>Predicting customer churn with Apache Spark.</p>
+                <p>Skills: Predictive Modeling, ML | Tools: Apache Spark, Python</p>
                 <a href="https://github.com/Hmati/Customer-Churn-Prediction">View Project</a>
             </div>
         </div>
