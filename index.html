@@ -16,32 +16,25 @@
         body {
             background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);
             color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            text-align: center;
             padding: 20px;
         }
 
         .container {
             display: flex;
             max-width: 1200px;
-            width: 100%;
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            margin: auto;
+            gap: 40px;
+            align-items: flex-start;
         }
 
         .profile {
-            width: 35%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-right: 20px;
-            border-right: 2px solid #eee;
+            flex: 1;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
 
         .profile img {
@@ -49,27 +42,30 @@
             height: 150px;
             border-radius: 50%;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin-bottom: 15px;
         }
 
-        h1 {
+        .profile h1 {
             font-size: 2rem;
             color: #333;
-            margin-top: 20px;
         }
 
-        .cta {
-            margin-top: 20px;
+        .profile p {
+            font-size: 1rem;
+            margin-top: 10px;
         }
 
         .cta a {
+            display: inline-block;
             padding: 10px 20px;
-            margin: 5px;
+            margin: 10px 5px;
             border-radius: 50px;
             background-color: #ff3366;
             color: white;
             text-decoration: none;
             font-weight: 600;
-            display: inline-block;
+            transition: background-color 0.3s ease;
         }
 
         .cta a:hover {
@@ -77,78 +73,59 @@
         }
 
         .projects {
-            width: 65%;
-            padding-left: 20px;
+            flex: 2;
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
         }
 
         .project-card {
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
+            width: 300px;
+            text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .project-card img {
-            width: 100px;
-            height: 100px;
+            width: 100%;
+            height: auto;
             border-radius: 10px;
-        }
-
-        .project-info {
-            flex: 1;
-        }
-
-        .project-info h3 {
-            margin-bottom: 5px;
-        }
-
-        .project-info p {
-            font-size: 14px;
-            color: #555;
-        }
-
-        .project-info a {
-            text-decoration: none;
-            color: #ff3366;
-            font-weight: bold;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Profile Section -->
         <div class="profile">
             <img src="https://avatars.githubusercontent.com/u/73826985?v=4" alt="Hellen Mati">
             <h1>Hellen Mati</h1>
             <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
+            <p>Innovative and results-driven Data Analyst & Data Engineer with a strong track record of designing, developing, and managing cloud-based data solutions using Microsoft Azure. Passionate about transforming raw data into meaningful business insights, optimizing ETL pipelines, and enhancing data storage efficiency to drive informed decision-making. Adept at working with large datasets, real-time analytics, and advanced data visualization tools, ensuring businesses gain actionable insights for growth and operational excellence. Proven ability to streamline processes, automate workflows, and implement scalable solutions that boost performance, improve efficiency, and enable data-driven strategies.</p>
             <div class="cta">
                 <a href="https://www.linkedin.com/in/hellen-mati" target="_blank">LinkedIn</a>
                 <a href="https://github.com/Hmati" target="_blank">GitHub</a>
             </div>
         </div>
+
+        <!-- Projects Section -->
         <div class="projects">
             <div class="project-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="SQL Project">
-                <div class="project-info">
-                    <h3>Data Analysis with SQL</h3>
-                    <p><strong>Skills:</strong> Data Cleaning</p>
-                    <p><strong>Tools:</strong> SQL, Jupyter Notebooks</p>
-                    <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
-                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/320px-Sql_data_base_with_logo.png" alt="SQL Data Analysis">
+                <h3>Data Analysis with SQL</h3>
+                <p>Skills: Data Cleaning</p>
+                <p>Tools: SQL, Jupyter Notebooks</p>
+                <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
             </div>
             <div class="project-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Apache_Spark_logo.svg/512px-Apache_Spark_logo.svg.png" alt="Churn Prediction">
-                <div class="project-info">
-                    <h3>Customer Churn Prediction</h3>
-                    <p><strong>Skills:</strong> Machine Learning, Predictive Analytics</p>
-                    <p><strong>Tools:</strong> Apache Spark, PySpark, AWS S3</p>
-                    <a href="https://github.com/Hmati/Customer-Churn-Prediction">View Project</a>
-                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Apache_Spark_logo.svg" alt="Customer Churn Prediction">
+                <h3>Customer Churn Prediction</h3>
+                <p>Skills: Predictive Analytics, Machine Learning</p>
+                <p>Tools: Apache Spark, PySpark</p>
+                <a href="https://github.com/Hmati/Customer-Churn-Prediction">View Project</a>
             </div>
         </div>
     </div>
