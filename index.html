@@ -17,82 +17,100 @@
             background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);
             color: #333;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .container {
-            display: flex;
             max-width: 1200px;
             margin: auto;
-            gap: 40px;
-            align-items: flex-start;
         }
 
+        /* Profile Section */
         .profile {
-            flex: 1;
-            padding: 30px;
-            background-color: #ffffff;
+            background: #ffffff;
+            padding: 40px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         .profile img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            display: block;
             margin-bottom: 15px;
         }
 
         .profile h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #333;
+            margin-bottom: 10px;
         }
 
         .profile p {
             font-size: 1rem;
-            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .cta {
+            margin-top: 15px;
         }
 
         .cta a {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 20px;
             margin: 10px 5px;
-            border-radius: 50px;
+            border-radius: 30px;
             background-color: #ff3366;
             color: white;
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s ease;
+            transition: 0.3s ease;
         }
 
         .cta a:hover {
             background-color: #d02b58;
         }
 
+        /* Projects Section */
         .projects {
-            flex: 2;
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
-            justify-content: center;
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
             padding: 20px;
-            border-radius: 10px;
-            width: 300px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
         .project-card img {
             width: 100%;
             height: auto;
             border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: #555;
             margin-bottom: 10px;
         }
 
@@ -111,25 +129,23 @@
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 0.9rem;
-            display: inline-block;
         }
 
         .view-button {
             display: inline-block;
             padding: 10px 15px;
-            margin-top: 10px;
+            margin-top: 15px;
             background-color: #bb33ff;
             color: white;
             text-decoration: none;
             font-weight: bold;
             border-radius: 20px;
-            transition: background-color 0.3s ease;
+            transition: 0.3s ease;
         }
 
         .view-button:hover {
             background-color: #d02b58;
         }
-
     </style>
 </head>
 <body>
@@ -139,7 +155,7 @@
             <img src="https://avatars.githubusercontent.com/u/73826985?v=4" alt="Hellen Mati">
             <h1>Hellen Mati</h1>
             <p><strong>Data Engineer | Data Analyst | Cloud Solutions Expert</strong></p>
-            <p>Innovative and results-driven Data Engineer & Data Analyst with a strong track record of designing, developing, and managing cloud-based data solutions using Microsoft Azure. Passionate about transforming raw data into meaningful business insights, optimizing ETL pipelines, and enhancing data storage efficiency.</p>
+            <p>Passionate about transforming raw data into meaningful insights, optimizing ETL pipelines, and driving data-driven business decisions.</p>
             <div class="cta">
                 <a href="https://www.linkedin.com/in/hellen-mati" target="_blank">LinkedIn</a>
                 <a href="https://github.com/Hmati" target="_blank">GitHub</a>
@@ -149,11 +165,11 @@
         <!-- Projects Section -->
         <div class="projects">
 
-            <!-- SQL Project -->
+            <!-- Example Project -->
             <div class="project-card">
                 <img src="https://i.postimg.cc/QM1YxX5w/sqlnew.jpg" alt="SQL Data Analysis">
                 <h3>Sales Data Mining Project</h3>
-                <p><strong>Objective:</strong> Conduct an in-depth analysis of sales data to derive insights, identify trends, and develop data-driven strategies.</p>
+                <p>Analyzing sales data to uncover trends and develop data-driven strategies.</p>
                 <div class="tools">
                     <span class="tool">SQL</span>
                     <span class="tool">Jupyter Notebooks</span>
@@ -161,65 +177,18 @@
                 <a class="view-button" href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
             </div>
 
-            <!-- Pizza Sales Analysis -->
+            <!-- Real-Time Stock Streaming ETL -->
             <div class="project-card">
-                <img src="https://i.postimg.cc/Jh7D4VvZ/Pizza-sales.png" alt="Pizza Sales Analysis">
-                <h3>Pizza Sales Analysis</h3>
-                <p><strong>Overview:</strong> Analyzing pizza sales data to uncover insights on sales trends and customer preferences.</p>
-                <div class="tools">
-                    <span class="tool">SQL (MySQL)</span>
-                    <span class="tool">Excel</span>
-                    <span class="tool">MySQL Workbench</span>
-                </div>
-                <a class="view-button" href="https://github.com/Hmati/Sales-Analysis-With-Excel">View Project</a>
-            </div>
-
-            <!-- ETL Data Pipeline -->
-            <div class="project-card">
-                <img src="https://i.postimg.cc/wT4VTm5v/Sales-data-analysis-for-sales-managers.png" alt="ETL Pipeline">
-                <h3>ETL Data Pipeline for Global Superstore</h3>
-                <p><strong>Overview:</strong> Extract, transform, and load sales data into a SQLite database for analytics.</p>
+                <img src="https://i.postimg.cc/g2fYnf7S/Data-ingestion.jpg" alt="Stock Streaming ETL">
+                <h3>Real-Time Stock Price Streaming ETL</h3>
+                <p>Real-time stock data ingestion, processing, and analytics using modern ETL pipelines.</p>
                 <div class="tools">
                     <span class="tool">Python</span>
-                    <span class="tool">Pandas</span>
-                    <span class="tool">SQLite</span>
-                </div>
-                <a class="view-button" href="https://github.com/Hmati/-ETL-Data-Pipeline-for-Global-Superstore-Analytics">View Project</a>
-            </div>
-
-            <!-- Spotify EDA -->
-            <div class="project-card">
-                <img src="https://i.postimg.cc/JzP05nJD/spotify-Header-1024x576.jpg" alt="Spotify EDA">
-                <h3>Spotify EDA Project</h3>
-                <p><strong>Objective:</strong> Analyze data from top songs across different decades using Spotify’s "All Out" playlists.</p>
-                <div class="tools">
-                    <span class="tool">Python</span>
-                    <span class="tool">Pandas</span>
-                    <span class="tool">Jupyter Notebooks</span>
-                </div>
-                <a class="view-button" href="https://github.com/Hmati/DataScience/blob/main/Project%2003%20Spotify.ipynb">View Project</a>
-            </div>
-			
-			<!-- Real-Time Stock Streaming ETL -->
-            <div class="project-card">
-                 <img src="https://i.postimg.cc/g2fYnf7S/Data-ingestion.jpg" alt="Stock Streaming ETL">
-                 <h3>Real-Time Stock Price Streaming ETL Pipeline</h3>
-                 <p><strong>Objective:</strong> Ingest, process, and store real-time stock price data using modern ETL practices, leveraging cloud storage and data warehouses for analytics.</p>
-                 <div class="tools">
-                      <span class="tool">Python</span>
-                      <span class="tool">Apache Kafka</span>
-                      <span class="tool">Apache Spark</span>
-                      <span class="tool">Amazon S3</span>
-                      <span class="tool">Google Cloud Storage</span>
-                      <span class="tool">Amazon Redshift</span>
-                      <span class="tool">Google BigQuery</span>
-                      <span class="tool">Apache Airflow</span>
-                      <span class="tool">Tableau</span>
-                      <span class="tool">Google Data Studio</span>
+                    <span class="tool">Apache Kafka</span>
+                    <span class="tool">Apache Spark</span>
                 </div>
                 <a class="view-button" href="https://github.com/Hmati/Real-Time-Stock-Price-Streaming-ETL-Pipeline">View Project</a>
             </div>
-
 
         </div>
     </div>
