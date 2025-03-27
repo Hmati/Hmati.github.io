@@ -1,62 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hellen Mati - Data Engineer | Data Analyst</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Hellen Mati</h1>
-            <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://drive.google.com/file/d/1lOywDWCppennVrAm-H_wEmYEAai7PGR5/view?usp=sharing" target="_blank">Resume</a></li>
-                </ul>
-            </nav>
+import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-gray-900 text-white p-8">
+      {/* Header Section */}
+      <motion.header 
+        className="flex justify-between items-center p-6"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="text-3xl font-bold">Hellen Mati</h1>
+        <nav className="space-x-6">
+          <a href="#projects" className="hover:text-gray-300">Projects</a>
+          <a href="#about" className="hover:text-gray-300">About</a>
+          <a href="#contact" className="hover:text-gray-300">Contact</a>
+        </nav>
+      </motion.header>
+
+      {/* Hero Section */}
+      <motion.section 
+        className="text-center mt-16"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-5xl font-extrabold">Data Engineer | Data Analyst</h2>
+        <p className="mt-4 text-lg text-gray-400">I build scalable data pipelines and insightful analytics solutions.</p>
+        <div className="mt-6 space-x-4">
+          <Button className="bg-blue-500 px-6 py-3 text-lg">Download Resume</Button>
+          <Button className="border border-white px-6 py-3 text-lg">Contact Me</Button>
         </div>
-    </header>
-    
-    <section id="about" class="container">
-        <img src="https://i.postimg.cc/pVmGm4Vd/A54-CD290-FF96-4-DB6-B770-7-B5-B7990-DBD6.png" alt="Hellen Mati" class="profile-img">
-        <p>Passionate about transforming raw data into meaningful insights, optimizing ETL pipelines, and driving data-driven business decisions.</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/hellen-mati" target="_blank">LinkedIn</a>
-            <a href="https://github.com/Hmati" target="_blank">GitHub</a>
+      </motion.section>
+
+      {/* Projects Section */}
+      <section id="projects" className="mt-16">
+        <h2 className="text-4xl font-bold text-center">Projects</h2>
+        <div className="grid md:grid-cols-3 gap-8 mt-8">
+          <Card className="bg-gray-800 p-6">
+            <CardContent>
+              <h3 className="text-2xl font-semibold">Crypto Price Tracker</h3>
+              <p className="text-gray-400 mt-2">A real-time dashboard tracking crypto trends using Apache Kafka.</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 p-6">
+            <CardContent>
+              <h3 className="text-2xl font-semibold">Customer Churn Prediction</h3>
+              <p className="text-gray-400 mt-2">A machine learning model to predict customer churn.</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 p-6">
+            <CardContent>
+              <h3 className="text-2xl font-semibold">Retail Data Dashboard</h3>
+              <p className="text-gray-400 mt-2">An analytics dashboard for e-commerce businesses.</p>
+            </CardContent>
+          </Card>
         </div>
-    </section>
-    
-    <section id="projects" class="container">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="https://i.postimg.cc/QM1YxX5w/sqlnew.jpg" alt="SQL Data Analysis">
-                <h3>Sales Data Mining</h3>
-                <p>Analyzing sales data to uncover trends and develop data-driven strategies.</p>
-                <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
-            </div>
-            <div class="project-card">
-                <img src="https://i.postimg.cc/Jh7D4VvZ/Pizza-sales.png" alt="Pizza Sales Analysis">
-                <h3>Pizza Sales Analysis</h3>
-                <p>Analyzing pizza sales data to uncover sales trends and customer preferences.</p>
-                <a href="https://github.com/Hmati/Sales-Analysis-With-Excel">View Project</a>
-            </div>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="text-center mt-16 text-gray-400">
+        <p>Connect with me:</p>
+        <div className="flex justify-center space-x-4 mt-4">
+          <FaGithub size={30} className="hover:text-white cursor-pointer" />
+          <FaLinkedin size={30} className="hover:text-white cursor-pointer" />
+          <FaTwitter size={30} className="hover:text-white cursor-pointer" />
         </div>
-    </section>
-    
-    <section id="contact" class="container">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:hellenmati@example.com">hellenmati@example.com</a></p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Hellen Mati. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+        <p className="mt-6">© 2025 Hellen Mati. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
