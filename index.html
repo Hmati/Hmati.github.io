@@ -5,250 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hellen Mati - Data Engineer | Data Analyst</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #ff758c, #ff7eb3, #fad0c4);
-            color: #333;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        /* Profile Section */
-        .profile {
-            background: #ffffff;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .profile img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-        }
-
-        .profile h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .profile p {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .cta a {
-            display: inline-block;
-            padding: 12px 20px;
-            margin: 10px;
-            border-radius: 30px;
-            background-color: #ff3366;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s ease;
-        }
-
-        .cta a:hover {
-            background-color: #d02b58;
-        }
-
-        /* Projects Section */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-card img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .project-card h3 {
-            font-size: 1.2rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .project-card p {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        .view-button {
-            display: inline-block;
-            padding: 10px 15px;
-            background-color: #bb33ff;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 20px;
-            transition: 0.3s ease;
-        }
-
-        .view-button:hover {
-            background-color: #d02b58;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div class="container">
-        <!-- Profile Section -->
-        <div class="profile">
-            <img src="https://i.postimg.cc/pVmGm4Vd/A54-CD290-FF96-4-DB6-B770-7-B5-B7990-DBD6.png" alt="Hellen Mati">
+    <header>
+        <div class="container">
             <h1>Hellen Mati</h1>
-            <p><strong>Data Engineer | Data Analyst | Cloud Solutions Expert</strong></p>
-            <p>Passionate about transforming raw data into meaningful insights, optimizing ETL pipelines, and driving data-driven business decisions.</p>
-            <div class="cta">
-                <a href="https://www.linkedin.com/in/hellen-mati" target="_blank">LinkedIn</a>
-                <a href="https://github.com/Hmati" target="_blank">GitHub</a>
-            </div>
+            <p>Data Engineer | Data Analyst | Cloud Solutions Expert</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://drive.google.com/file/d/1lOywDWCppennVrAm-H_wEmYEAai7PGR5/view?usp=sharing" target="_blank">Resume</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <!-- Projects Section -->
-        <div class="projects">
-            <!-- Sales Data Mining -->
+    </header>
+    
+    <section id="about" class="container">
+        <img src="https://i.postimg.cc/pVmGm4Vd/A54-CD290-FF96-4-DB6-B770-7-B5-B7990-DBD6.png" alt="Hellen Mati" class="profile-img">
+        <p>Passionate about transforming raw data into meaningful insights, optimizing ETL pipelines, and driving data-driven business decisions.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/hellen-mati" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Hmati" target="_blank">GitHub</a>
+        </div>
+    </section>
+    
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
             <div class="project-card">
                 <img src="https://i.postimg.cc/QM1YxX5w/sqlnew.jpg" alt="SQL Data Analysis">
-                <h3>Sales Data Mining Project</h3>
+                <h3>Sales Data Mining</h3>
                 <p>Analyzing sales data to uncover trends and develop data-driven strategies.</p>
-                <div class="tools">
-                    <span class="tool">SQL</span>
-                    <span class="tool">Jupyter Notebooks</span>
-                </div>
-                <a class="view-button" href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
+                <a href="https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL">View Project</a>
             </div>
-
-            <!-- Pizza Sales Analysis -->
             <div class="project-card">
                 <img src="https://i.postimg.cc/Jh7D4VvZ/Pizza-sales.png" alt="Pizza Sales Analysis">
                 <h3>Pizza Sales Analysis</h3>
                 <p>Analyzing pizza sales data to uncover sales trends and customer preferences.</p>
-                <div class="tools">
-                    <span class="tool">SQL</span>
-                    <span class="tool">Excel</span>
-                </div>
-                <a class="view-button" href="https://github.com/Hmati/Sales-Analysis-With-Excel">View Project</a>
+                <a href="https://github.com/Hmati/Sales-Analysis-With-Excel">View Project</a>
             </div>
-
-            <!-- ETL Data Pipeline -->
-            <div class="project-card">
-                <img src="https://i.postimg.cc/wT4VTm5v/Sales-data-analysis-for-sales-managers.png" alt="ETL Pipeline">
-                <h3>ETL Data Pipeline for Global Superstore</h3>
-                <p>Extract, transform, and load sales data into a SQLite database for analytics.</p>
-                <div class="tools">
-                    <span class="tool">Python</span>
-                    <span class="tool">Pandas</span>
-                </div>
-                <a class="view-button" href="https://github.com/Hmati/-ETL-Data-Pipeline-for-Global-Superstore-Analytics">View Project</a>
-            </div>
-			
-			   <!-- Spotify EDA -->
-            <div class="project-card">
-                <img src="https://i.postimg.cc/JzP05nJD/spotify-Header-1024x576.jpg" alt="Spotify EDA">
-                <h3>Spotify EDA Project</h3>
-                <p><strong>Objective:</strong> Analyze data from top songs across different decades using Spotify’s "All Out" playlists.</p>
-                <div class="tools">
-                    <span class="tool">Python</span>
-                    <span class="tool">Pandas</span>
-                    <span class="tool">Jupyter Notebooks</span>
-                </div>
-                <a class="view-button" href="https://github.com/Hmati/DataScience/blob/main/Project%2003%20Spotify.ipynb">View Project</a>
-            </div>
-
-            <!-- Real-Time Stock Streaming ETL -->
-            <div class="project-card">
-                 <img src="https://i.postimg.cc/g2fYnf7S/Data-ingestion.jpg" alt="Stock Streaming ETL">
-                 <h3>Real-Time Stock Price Streaming ETL Pipeline</h3>
-                 <p><strong>Objective:</strong> Ingest, process, and store real-time stock price data using modern ETL practices, leveraging cloud storage and data warehouses for analytics.</p>
-                 <div class="tools">
-                      <span class="tool">Python</span>
-                      <span class="tool">Apache Kafka</span>
-                      <span class="tool">Apache Spark</span>
-                      <span class="tool">Amazon S3</span>
-                      <span class="tool">Google Cloud Storage</span>
-                      <span class="tool">Amazon Redshift</span>
-                      <span class="tool">Google BigQuery</span>
-                      <span class="tool">Apache Airflow</span>
-                      <span class="tool">Tableau</span>
-                      <span class="tool">Google Data Studio</span>
-                </div>
-				<a class="view-button" href="https://github.com/Hmati/Real-Time-Stock-Price-Streaming-ETL-Pipeline">View Project</a>
-       
-
-	   </div>
-	        <!-- HR Attrition Dashboard -->
-            <div class="project-card">
-                 <img src="https://i.postimg.cc/Nfby86bq/1715608382599.png" alt="HR Attrition Dashboard">
-                 <h3>HR Attrition Dashboard</h3>
-                 <p><strong>Objective:</strong> Creating an interactive HR Attrition Dashboard bu use of the power of Excel </p>
-                 <div class="tools">
-                      <span class="tool">Excel Pivot Tables & Pivot Charts</span>
-                      <span class="tool">Power Query for Data Cleaning & Transformation</span>
-                      <span class="tool">GETPIVOTDATA for Dynamic Reporting</span>
-                      <span class="tool">Slicers for Interactive Filtering </span>
-                      <span class="tool">Conditional Formatting for Data Highlighting</span>
-                   
-                </div>
-				<a class="view-button" href="https://github.com/Hmati/HR-ATTRITION-EXCEL-/tree/master">View Project</a>
-       
         </div>
-	        <!-- Sales Dashboard  -->
-            <div class="project-card">
-                 <img src="https://i.postimg.cc/kgBdV5jS/sales.png" alt="HR Attrition Dashboard">
-                 <h3>Sales Dashboard </h3>
-                 <p><strong>Objective:</strong>Creating an interactive Sales  Dashboard  using the  the power of Excel</p>
-                 <div class="tools">
-                      <span class="tool">Excel Pivot Tables & Pivot Charts</span>
-                      <span class="tool">Power Query for Data Cleaning & Transformation</span>
-                      <span class="tool">GETPIVOTDATA for Dynamic Reporting</span>
-                      <span class="tool">Slicers for Interactive Filtering </span>
-                      <span class="tool">Conditional Formatting for Data Highlighting</span>
-                   
-                </div>
-				<a class="view-button" href="https://github.com/Hmati/Sales-Excel-Dashboard">View Project</a>
-       
-
-	   </div>
-	   
-	   
-    </div>
+    </section>
+    
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:hellenmati@example.com">hellenmati@example.com</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Hellen Mati. All rights reserved.</p>
+    </footer>
 </body>
 </html>
