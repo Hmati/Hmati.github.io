@@ -1,77 +1,60 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import "./styles.css";
 
-export default function Portfolio() {
+const projects = [
+  {
+    title: "Sales Data Mining Project",
+    description: "Analyzing sales data to uncover trends and develop data-driven strategies.",
+    image: "https://i.postimg.cc/QM1YxX5w/sqlnew.jpg",
+    tools: ["SQL", "Jupyter Notebooks"],
+    link: "https://github.com/Hmati/DATA-ANALYSIS-WITH-SQL",
+  },
+  {
+    title: "Pizza Sales Analysis",
+    description: "Analyzing pizza sales data to uncover sales trends and customer preferences.",
+    image: "https://i.postimg.cc/Jh7D4VvZ/Pizza-sales.png",
+    tools: ["SQL", "Excel"],
+    link: "https://github.com/Hmati/Sales-Analysis-With-Excel",
+  },
+  {
+    title: "ETL Data Pipeline for Global Superstore",
+    description: "Extract, transform, and load sales data into a SQLite database for analytics.",
+    image: "https://i.postimg.cc/wT4VTm5v/Sales-data-analysis-for-sales-managers.png",
+    tools: ["Python", "Pandas"],
+    link: "https://github.com/Hmati/-ETL-Data-Pipeline-for-Global-Superstore-Analytics",
+  },
+];
+
+const Portfolio = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
-      {/* Header Section */}
-      <motion.header 
-        className="flex justify-between items-center p-6"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1 className="text-3xl font-bold">Hellen Mati</h1>
-        <nav className="space-x-6">
-          <a href="#projects" className="hover:text-gray-300">Projects</a>
-          <a href="#about" className="hover:text-gray-300">About</a>
-          <a href="#contact" className="hover:text-gray-300">Contact</a>
-        </nav>
-      </motion.header>
-
-      {/* Hero Section */}
-      <motion.section 
-        className="text-center mt-16"
+    <div className="min-h-screen bg-gray-100 text-gray-900 flex flex-col items-center">
+      <header className="text-4xl font-bold mt-10">Hellen Mati</header>
+      <p className="text-lg text-gray-600">Data Engineer | Data Analyst | Cloud Solutions Expert</p>
+      
+      <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <h2 className="text-5xl font-extrabold">Data Engineer | Data Analyst</h2>
-        <p className="mt-4 text-lg text-gray-400">I build scalable data pipelines and insightful analytics solutions.</p>
-        <div className="mt-6 space-x-4">
-          <Button className="bg-blue-500 px-6 py-3 text-lg">Download Resume</Button>
-          <Button className="border border-white px-6 py-3 text-lg">Contact Me</Button>
-        </div>
-      </motion.section>
-
-      {/* Projects Section */}
-      <section id="projects" className="mt-16">
-        <h2 className="text-4xl font-bold text-center">Projects</h2>
-        <div className="grid md:grid-cols-3 gap-8 mt-8">
-          <Card className="bg-gray-800 p-6">
-            <CardContent>
-              <h3 className="text-2xl font-semibold">Crypto Price Tracker</h3>
-              <p className="text-gray-400 mt-2">A real-time dashboard tracking crypto trends using Apache Kafka.</p>
-            </CardContent>
-          </Card>
-          <Card className="bg-gray-800 p-6">
-            <CardContent>
-              <h3 className="text-2xl font-semibold">Customer Churn Prediction</h3>
-              <p className="text-gray-400 mt-2">A machine learning model to predict customer churn.</p>
-            </CardContent>
-          </Card>
-          <Card className="bg-gray-800 p-6">
-            <CardContent>
-              <h3 className="text-2xl font-semibold">Retail Data Dashboard</h3>
-              <p className="text-gray-400 mt-2">An analytics dashboard for e-commerce businesses.</p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Footer Section */}
-      <footer className="text-center mt-16 text-gray-400">
-        <p>Connect with me:</p>
-        <div className="flex justify-center space-x-4 mt-4">
-          <FaGithub size={30} className="hover:text-white cursor-pointer" />
-          <FaLinkedin size={30} className="hover:text-white cursor-pointer" />
-          <FaTwitter size={30} className="hover:text-white cursor-pointer" />
-        </div>
-        <p className="mt-6">© 2025 Hellen Mati. All rights reserved.</p>
-      </footer>
+        transition={{ duration: 1 }}>
+        {projects.map((project, index) => (
+          <motion.div key={index} className="bg-white shadow-lg rounded-lg p-5"
+            whileHover={{ scale: 1.05 }}>
+            <img src={project.image} alt={project.title} className="rounded-md w-full" />
+            <h3 className="text-xl font-semibold mt-4">{project.title}</h3>
+            <p className="text-gray-600 mt-2">{project.description}</p>
+            <div className="mt-2 flex flex-wrap">
+              {project.tools.map((tool, i) => (
+                <span key={i} className="bg-blue-500 text-white text-sm px-2 py-1 rounded-full m-1">{tool}</span>
+              ))}
+            </div>
+            <a href={project.link} className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+              View Project
+            </a>
+          </motion.div>
+        ))}
+      </motion.div>
     </div>
   );
-}
+};
+
+export default Portfolio;
